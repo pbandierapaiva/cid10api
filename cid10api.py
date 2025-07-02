@@ -3,7 +3,18 @@ from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 import uvicorn
 
-app = FastAPI()
+app = FastAPI(lifespan=lifespan)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://redcap.unifesp.br",
+        "https://redcap.unifesp.br:8001"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["*"]
+)
 
 # Enable CORS if needed
 app.add_middleware(
