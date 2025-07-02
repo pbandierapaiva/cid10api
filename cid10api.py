@@ -1,7 +1,20 @@
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
 from typing import List
 import uvicorn
+
+cid_dict = {}
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    with open("cid10.txt", encoding="utf-8") as f:
+        for line in f:
+            parts = line.strip().split(maxsplit=1)
+            if len(parts) == 2:
+                code, desc = parts
+                cid_dict[code] = desc
+    yield  # Application is running
 
 app = FastAPI(lifespan=lifespan)
 app.add_middleware(
@@ -24,22 +37,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-cid_dict = {}
-
-@app.on_event("startup")
-def load_data():
-    with open("cid10.txt", encoding="utf-8") as f:
-        for line in f:
-            parts = line.strip().split(maxsplit=1)
-            if len(parts) == 2:
-                code, desc = parts
-                cid_dict[code] = desc
-
 @app.get("/cid10/search")
 def search_cid10(q: str = Query(..., min_length=2)) -> List[dict]:
     results = []
     q_lower = q.lower()
-    print(q)
     for code, desc in cid_dict.items():
         print(code,desc)
         if q_lower in desc.lower():
