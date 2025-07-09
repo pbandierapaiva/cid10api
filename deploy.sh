@@ -1,7 +1,7 @@
 
 echo "Copy API"
 rm -r /srv/cid10api/
-cp -r ../cid10api /srv/
+cp -r cid10api /srv/
 
 echo "Continue to copy module to REDCap"
 read
