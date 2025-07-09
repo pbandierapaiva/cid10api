@@ -42,7 +42,7 @@ app.add_middleware(
 )
 
 @app.get("/cid10/search")
-def search_cid10(q: str = Query(..., min_length=2)) -> List[dict]:
+def search_cid10(query: str = Query(..., min_length=2)) -> List[dict]:
     results = []
     q_lower = q.lower()
     for code, desc in cid_dict.items():
