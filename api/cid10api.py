@@ -44,7 +44,7 @@ app.add_middleware(
 @app.get("/cid10/search")
 def search_cid10(query: str = Query(..., min_length=2)) -> List[dict]:
     results = []
-    q_lower = q.lower()
+    q_lower = query.lower()
     for code, desc in cid_dict.items():
         print(code,desc)
         if q_lower in desc.lower() or q_lower in code.lower():
