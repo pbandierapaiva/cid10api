@@ -20,7 +20,7 @@
         }
     ],
     "hooks": [
-        "every_page_top" // Useful if you need to inject custom JS/CSS for styling
+        "every_page_top" 
     ],
     "compatible-versions": "12.5.0 and higher",
     "permissions": []
