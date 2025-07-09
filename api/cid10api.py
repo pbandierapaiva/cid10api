@@ -55,8 +55,9 @@ def search_cid10(query: str = Query(..., min_length=2)) -> List[dict]:
 
 @app.get("/cid10/code/{code}")
 def get_cid10(code: str):
-    if code in cid_dict:
-        return {"code": code, "description": cid_dict[code]}
+    lcode = code.upper()
+    if lcode in cid_dict:
+        return {"code": lcode, "description": cid_dict[lcode]}
     else:
         raise HTTPException(status_code=404, detail="CID10 code not found")
 
