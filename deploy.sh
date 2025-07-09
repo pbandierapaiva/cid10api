@@ -3,6 +3,11 @@ echo "Copy API"
 rm -r /srv/cid10api/
 cp -r cid10api /srv/
 
+echo "Create environment"
+python -m venv /srv/cid10api/venv
+source /srv/cid10api/venv/bin/activate
+pip install -r /srv/cid10api/requirements.txt
+
 echo "Continue to copy module to REDCap"
 read
 sudo rm -rf /var/www/redcap/modules/cid10_module_v1.0
