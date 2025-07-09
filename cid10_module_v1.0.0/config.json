@@ -1,0 +1,27 @@
+{
+    "name": "Ontologia CID10",
+    "namespace": "CID10OntologyModule",
+    "description": "Provê fucionalidade de autopreenchimento CID10 usando serviço FASTAPI local.",
+    "framework-version": 11,
+    "authors": [
+        {
+            "name": "P.Bandiera-Paiva",
+            "email": "paiva@unifesp.br"
+        }
+    ],
+    "system-settings": [
+        {
+            "key": "fastapi_url",
+            "name": "URL base de serviço FastAPI",
+            "required": true,
+            "type": "text",
+            "validation_url": "https://redcap.unifesp.br/?regex=^https?%3A%2F%2F%5B%5E%2F%5D%2B(?:%3A%5Cd%2B)%3F%2F%5B%5E%3F%23%5D*%2F%3F$&flags=g",
+            "validation_error_text": "Entre com URL válida para seu serviço FASTAPI (e.g., https://redcap.unifesp.br:8000/)."
+        }
+    ],
+    "hooks": [
+        "every_page_top" // Useful if you need to inject custom JS/CSS for styling
+    ],
+    "compatible-versions": "12.5.0 and higher",
+    "permissions": []
+}
