@@ -1,7 +1,7 @@
 {
     "name": "Ontologia CID10",
     "namespace": "ExternalModules\\", 
-    "class-file": "CID10OntologyModule.php", 
+    "class-file": "cid10OntologyModule.php", 
     "description": "Provê fucionalidade de autopreenchimento CID10 usando serviço FASTAPI local.",
     "framework-version": 11,
     "authors": [
