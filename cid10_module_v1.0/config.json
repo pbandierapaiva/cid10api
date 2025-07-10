@@ -1,6 +1,7 @@
 {
     "name": "Ontologia CID10",
-    "namespace": "CID10OntologyModule",
+    // "namespace": "CID10OntologyModule",
+    "namespace": "ExternalModules\\", 
     "description": "Provê fucionalidade de autopreenchimento CID10 usando serviço FASTAPI local.",
     "framework-version": 11,
     "authors": [
