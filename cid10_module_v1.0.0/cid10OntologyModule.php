@@ -1,4 +1,6 @@
-<?php namespace ExternalModules;
+<?php 
+// namespace ExternalModules;
+namespace UNIFESP\\cid10OntologyModule
 
 // Make sure to include the AbstractExternalModule class and the OntologyProvider interface
 use ExternalModules\AbstractExternalModule;
