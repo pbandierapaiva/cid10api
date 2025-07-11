@@ -4,7 +4,8 @@
 use ExternalModules\AbstractExternalModule;
 use ExternalModules\OntologyProvider;
 
-class CID10OntologyModule extends AbstractExternalModule implements OntologyProvider {
+// class cid10OntologyModule extends AbstractExternalModule implements OntologyProvider {
+class cid10OntologyModule extends AbstractExternalModule {
 
     // --- Implementation of OntologyProvider Interface ---
 
@@ -59,7 +60,7 @@ class CID10OntologyModule extends AbstractExternalModule implements OntologyProv
         }
 
         // Construct the URL for your FastAPI to get a specific code's display
-        $url = rtrim($fastapiUrl, '/') . '/icd/code/' . urlencode($code);
+        $url = rtrim($fastapiUrl, '/') . '/cid/code/' . urlencode($code);
 
         $response = $this->callFastApiService($url);
 
