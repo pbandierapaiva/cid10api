@@ -8,7 +8,14 @@ use ExternalModules\OntologyProvider;
 
 class cid10OntologyModule extends AbstractExternalModule implements \OntologyProvider {
 // class cid10OntologyModule extends AbstractExternalModule {
-
+    public function __construct()
+    {
+        parent::__construct();
+        // register with OntologyManager
+        $manager = \OntologyManager::getOntologyManager();
+        $manager->addProvider($this);
+    }
+    
     // --- Implementation of OntologyProvider Interface ---
 
     public function getOntologyCategories(): array {
