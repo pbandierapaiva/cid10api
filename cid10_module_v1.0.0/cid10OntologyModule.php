@@ -4,7 +4,8 @@ namespace UNIFESP\cid10OntologyModule;
 
 // Make sure to include the AbstractExternalModule class and the OntologyProvider interface
 use ExternalModules\AbstractExternalModule;
-use ExternalModules\OntologyProvider;
+// use ExternalModules\OntologyProvider;
+use ExternalModules\ExternalModules;
 
 class cid10OntologyModule extends AbstractExternalModule implements \OntologyProvider {
 // class cid10OntologyModule extends AbstractExternalModule {
@@ -15,7 +16,7 @@ class cid10OntologyModule extends AbstractExternalModule implements \OntologyPro
         $manager = \OntologyManager::getOntologyManager();
         $manager->addProvider($this);
     }
-    
+
     // --- Implementation of OntologyProvider Interface ---
 
     public function getOntologyCategories(): array {
