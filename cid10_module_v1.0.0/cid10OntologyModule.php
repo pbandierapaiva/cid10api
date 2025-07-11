@@ -6,7 +6,7 @@ namespace UNIFESP\cid10OntologyModule;
 use ExternalModules\AbstractExternalModule;
 use ExternalModules\OntologyProvider;
 
-class cid10OntologyModule extends AbstractExternalModule implements OntologyProvider {
+class cid10OntologyModule extends AbstractExternalModule implements \OntologyProvider {
 // class cid10OntologyModule extends AbstractExternalModule {
 
     // --- Implementation of OntologyProvider Interface ---
