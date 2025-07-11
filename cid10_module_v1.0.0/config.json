@@ -1,7 +1,6 @@
 {
     "name": "Ontologia CID10",
-    "namespace": "ExternalModules\\", 
-    "class-file": "cid10OntologyModule.php", 
+    "namespace": "UNIFESP\\cid10OntologyModule", 
     "description": "Provê fucionalidade de autopreenchimento CID10 usando serviço FASTAPI local.",
     "framework-version": 11,
     "authors": [
